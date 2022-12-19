@@ -1,0 +1,2 @@
+C:\Test\vs-studio\MinHoookDll\MinHoookDll\Debug\MinHoookDll.vcxproj.CopyComplete
+C:\Projects\MinHoookDll\MinHoookDll\Debug\MinHoookDll.vcxproj.CopyComplete
