@@ -1,43 +1,15 @@
-<a name="readme-top"></a>
+# Minhook simple dll attach example
 
-# Powerful x86/x64 Mini Hook-Engine Mirror by Daniel Pistelli Fix include
+Based on https://shubakki.github.io/posts/2022/12/detecting-and-evading-sandboxing-through-time-based-evasion/
 
-<div align="center">
-  <img src="/nthookengine.png" alt="hook and unhooked MessageBox">
-</div>
+Simple minhook example via run-time dynamic linking for fun and learning
 
-<details>
-  <summary>
-    <h2>Table of Contents</h2>
-  </summary>
-  <ul>
-    <li><a href="#why">Why?</a></li>
-    <li><a href="#how-to-buildcompile-original-code">How to Build/Compile original code</a></li>
-    <li><a href="#code-structure">Code structure</a></li>
-    <li><a href="#the-bug-and-fix">The bug and fix</a></li>
-  </ul>
-</details>
+## How to Build/Compile
 
-This is not the popular minhook that one is here <https://github.com/TsudaKageyu/minhook>.
-
-On this repository you can find a copy of the code found in <https://www.codeproject.com/Articles/21414/Powerful-x86-x64-Mini-Hook-Engine> and a fix for make it works on windows 10
-
-## Why?
-
-I though was fun to do some necromancy to an old code on the way I found that it doesnt work anymore so I read the code and did some debug to make it works
-
-## How to Build/Compile original code
-
-Visual studio 2022 and its workload Desktop development with C++ are requiere
-
-Open the .sln file with visual studio and let it upgrade the solution. Build the solution as usual. That is, no adictional fix are require
+- Visual studio 2022 and its workload Desktop development with C++ are requiere
+- https://github.com/TsudaKageyu/minhook I recommend installing it via vcpkg
 
 ## Code structure
 
-- **nthookengine_original** contain the original code without modifications found on Powerful x86/x64 Mini Hook-Engine
-- **nthookengine_modified** code upgrade to vs-studio 2022 with binaries built on this version
-
-## The bug and fix
-There is a miss calculation on the code size to disam so I changed it [View Fix](https://github.com/raigorx/nthookengine/commit/48620a98161842677a7ca59bec9e2c6e4f576e64)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- **MinHookClient** console win app that load the MinHoookDll
+- **MinHoookDll** dll that hooks NtDelayExecution on DLL_PROCESS_ATTACH
